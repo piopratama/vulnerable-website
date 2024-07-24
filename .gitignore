@@ -1,0 +1,5 @@
+# Ignore all files in the includes directory
+/includes/.env.production
+
+# Ensure .gitignore itself is not ignored
+!.gitignore

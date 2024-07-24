@@ -1,0 +1,29 @@
+# Deny access to the entire root directory
+<Directory />
+    Order Deny,Allow
+    Deny from all
+</Directory>
+
+# Allow access only to the public directory
+<Directory /path/to/your/project/public>
+    Order Allow,Deny
+    Allow from all
+</Directory>
+
+# Prevent access to the includes directory
+<Directory /path/to/your/project/includes>
+    Order Deny,Allow
+    Deny from all
+</Directory>
+
+# Prevent access to the uploads directory (if it must be inside the web root)
+<Directory /path/to/your/project/uploads>
+    Order Deny,Allow
+    Deny from all
+</Directory>
+
+# Deny access to .htaccess file itself
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
